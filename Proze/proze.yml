@@ -1,0 +1,12 @@
+name: proze
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.8  
+  - biopython
+  - numpy
+  - requests
+  - pymol
+  - networkx
+  - pandas
