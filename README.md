@@ -1,4 +1,4 @@
-# CRCI-NA_Internship
+# CRCINA_Internship (INSERM/CNRS/IMPACT/NANTES_UNIVERSITY)
 
 Some tools made on my internship
 For using the autoencoder :
