@@ -1,11 +1,11 @@
 # CRCI-NA_Internship
 
 Some tools made on my internship
-For using the autoencoder make :
+For using the autoencoder :
 ``` bash
 cd autoencoder_local
 ```
-For using the ProZE make :
+For using the ProZE :
 ``` bash
 cd proze
 ```
