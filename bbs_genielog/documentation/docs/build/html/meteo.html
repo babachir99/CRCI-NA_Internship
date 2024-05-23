@@ -1,0 +1,352 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Phénomènes illustrés &#8212; My meteo report 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Métriques" href="metrique.html" />
+    <link rel="prev" title="Phénomènes métérologiques" href="phenomene.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="metrique.html" title="Métriques"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="phenomene.html" title="Phénomènes métérologiques"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Phénomènes illustrés</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="phenomenes-illustres">
+<h1>Phénomènes illustrés<a class="headerlink" href="#phenomenes-illustres" title="Link to this heading">¶</a></h1>
+<p>Dans cette partie de la documentation, vous retrouverez une illustration des matrices précédemment décrites dans <strong>phénomènes métérologiques</strong></p>
+<section id="tempete">
+<h2>Tempête<a class="headerlink" href="#tempete" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;tempete&quot;</span><span class="p">):</span>
+        <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">tempete_gl</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">tempete_gl</span><span class="o">.</span><span class="n">tempete</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ici, c’est la tempête qui s’affiche, avec 2 boucles for: l’une pour définir la durée, l’autre pour alterner et donner l’effet d’animation.
+Voici une des images obtenues finalement:</p>
+<figure class="tempete align-center">
+<a class="reference internal image-reference" href="_images/tempete.png"><img alt="sortie si meteo=tempete" src="_images/tempete.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="secheresse">
+<h2>Sécheresse<a class="headerlink" href="#secheresse" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;secheresse&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">secheresse_gl</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">secheresse_gl</span><span class="o">.</span><span class="n">secheresse</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ici, c’est la sécheresse qui s’affiche, avec 2 boucles for: l’une pour définir la durée, l’autre pour alterner et donner l’effet d’animation.
+Voici une des images en sortie:</p>
+<figure class="secheresse align-center">
+<a class="reference internal image-reference" href="_images/secheresse.png"><img alt="sortie si meteo=secheresse" src="_images/secheresse.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="soleil">
+<h2>Soleil<a class="headerlink" href="#soleil" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;soleil&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">soleil</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">soleil</span><span class="o">.</span><span class="n">soleil</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Grâce à cette partie de meteo.py, voilà ce que nous avons en sortie:</p>
+<figure class="soleil align-center">
+<a class="reference internal image-reference" href="_images/soleil.png"><img alt="sortie si meteo=soleil" src="_images/soleil.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="inondation">
+<h2>Inondation<a class="headerlink" href="#inondation" title="Link to this heading">¶</a></h2>
+<p>Voici la partie de la boucle qui permet d’afficher le phénomène d’inondation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;innondation&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">Innondation</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Innondation</span><span class="o">.</span><span class="n">innondation</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="innondation align-center">
+<a class="reference internal image-reference" href="_images/innondation.png"><img alt="sortie si meteo=innondation" src="_images/innondation.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="pluie">
+<h2>Pluie<a class="headerlink" href="#pluie" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher la pluie:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;pluie&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">pluie</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">pluie</span><span class="o">.</span><span class="n">pluie</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="secheresse align-center">
+<a class="reference internal image-reference" href="_images/pluie.png"><img alt="sortie si meteo=secheresse" src="_images/pluie.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="nuageux">
+<h2>Nuageux<a class="headerlink" href="#nuageux" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher un temps nuageux:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;nuageux&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">nuageux</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">nuageux</span><span class="o">.</span><span class="n">nuageux</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="nuageux align-center">
+<a class="reference internal image-reference" href="_images/nuageux.png"><img alt="sortie si meteo=nuageux" src="_images/nuageux.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="couvert">
+<h2>Couvert<a class="headerlink" href="#couvert" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher un temps couvert:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;couvert&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">couvert</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">couvert</span><span class="o">.</span><span class="n">couvert</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="couvert align-center">
+<a class="reference internal image-reference" href="_images/couvert.png"><img alt="sortie si meteo=Couvert" src="_images/couvert.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="orage">
+<h2>Orage<a class="headerlink" href="#orage" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher un temps Couvert:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;orage&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">couvert</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">orage</span><span class="o">.</span><span class="n">orage</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="couvert align-center">
+<a class="reference internal image-reference" href="_images/orage.png"><img alt="sortie si meteo=Couvert" src="_images/orage.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="ouragan">
+<h2>Ouragan<a class="headerlink" href="#ouragan" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher l’ouragan :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;ouragan&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">ouragan</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Ouragan</span><span class="o">.</span><span class="n">ouragan</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="ouragan align-center">
+<a class="reference internal image-reference" href="_images/ouragan.png"><img alt="sortie si meteo=ouragan" src="_images/ouragan.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+<section id="tornade">
+<h2>Tornade<a class="headerlink" href="#tornade" title="Link to this heading">¶</a></h2>
+<p>Pour pouvoir afficher la tornade :</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;tornade&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">tornade</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Tornade</span><span class="o">.</span><span class="n">tornade</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Voici ce que ce programme nous donne en sortie:</p>
+<figure class="couvert align-center">
+<a class="reference internal image-reference" href="_images/tornade.png"><img alt="sortie si meteo=tornade" src="_images/tornade.png" style="width: 300px; height: 300px;" /></a>
+</figure>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Phénomènes illustrés</a><ul>
+<li><a class="reference internal" href="#tempete">Tempête</a></li>
+<li><a class="reference internal" href="#secheresse">Sécheresse</a></li>
+<li><a class="reference internal" href="#soleil">Soleil</a></li>
+<li><a class="reference internal" href="#inondation">Inondation</a></li>
+<li><a class="reference internal" href="#pluie">Pluie</a></li>
+<li><a class="reference internal" href="#nuageux">Nuageux</a></li>
+<li><a class="reference internal" href="#couvert">Couvert</a></li>
+<li><a class="reference internal" href="#orage">Orage</a></li>
+<li><a class="reference internal" href="#ouragan">Ouragan</a></li>
+<li><a class="reference internal" href="#tornade">Tornade</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="phenomene.html"
+                          title="Previous page">&larr; Phénomènes métérologiques</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="metrique.html"
+                          title="Next page">&rarr; Métriques</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/meteo.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="metrique.html" title="Métriques"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="phenomene.html" title="Phénomènes métérologiques"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Phénomènes illustrés</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Blue Business Services open source.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

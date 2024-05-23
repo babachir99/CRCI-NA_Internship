@@ -1,0 +1,92 @@
+<?xml version="1.0"?>
+<ncx version="2005-1" xmlns="http://www.daisy.org/z3986/2005/ncx/">
+  <head>
+    <meta name="dtb:uid" content="unknown"/>
+    <meta name="dtb:depth" content="2"/>
+    <meta name="dtb:totalPageCount" content="0"/>
+    <meta name="dtb:maxPageNumber" content="0"/>
+  </head>
+  <docTitle>
+    <text>My meteo report</text>
+  </docTitle>
+  <navMap>    
+    <navPoint id="navPoint1" playOrder="1">
+      <navLabel>
+        <text>Bienvenue dans la documentation officielle de</text>
+      </navLabel>
+      <content src="index.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint2" playOrder="2">
+      <navLabel>
+        <text>Fichier Main</text>
+      </navLabel>
+      <content src="main.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint3" playOrder="3">
+      <navLabel>
+        <text>Phénomènes métérologiques</text>
+      </navLabel>
+      <content src="phenomene.xhtml" />  
+      <navPoint id="navPoint4" playOrder="3">
+        <navLabel>
+          <text>Phénomènes métérologiques</text>
+        </navLabel>
+        <content src="phenomene.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint5" playOrder="4">
+        <navLabel>
+          <text>Soleil</text>
+        </navLabel>
+        <content src="phenomene.xhtml#soleil" />  
+      </navPoint>
+      <navPoint id="navPoint6" playOrder="5">
+        <navLabel>
+          <text>Sécheresse</text>
+        </navLabel>
+        <content src="phenomene.xhtml#secheresse" />  
+      </navPoint>
+      <navPoint id="navPoint7" playOrder="6">
+        <navLabel>
+          <text>Tempête</text>
+        </navLabel>
+        <content src="phenomene.xhtml#tempete" />  
+      </navPoint>
+    </navPoint>
+    <navPoint id="navPoint8" playOrder="7">
+      <navLabel>
+        <text>Affichage</text>
+      </navLabel>
+      <content src="test_matrix.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint9" playOrder="8">
+      <navLabel>
+        <text>Programme Generate</text>
+      </navLabel>
+      <content src="generate.xhtml" />  
+    </navPoint>
+    <navPoint id="navPoint10" playOrder="9">
+      <navLabel>
+        <text>Manuel utilisateur</text>
+      </navLabel>
+      <content src="manuel_utilisateur.xhtml" />  
+      <navPoint id="navPoint11" playOrder="9">
+        <navLabel>
+          <text>Manuel utilisateur</text>
+        </navLabel>
+        <content src="manuel_utilisateur.xhtml" />  
+      </navPoint>
+      <navPoint id="navPoint12" playOrder="10">
+        <navLabel>
+          <text>Configuration</text>
+        </navLabel>
+        <content src="manuel_utilisateur.xhtml#configuration" />  
+      </navPoint>
+      <navPoint id="navPoint13" playOrder="11">
+        <navLabel>
+          <text>Fonctionalités</text>
+        </navLabel>
+        <content src="manuel_utilisateur.xhtml#fonctionalites" />  
+      </navPoint>
+    </navPoint>
+  </navMap>
+</ncx>

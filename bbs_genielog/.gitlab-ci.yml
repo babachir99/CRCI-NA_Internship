@@ -1,0 +1,23 @@
+# Mise en place de l'infrastructure d'intégration continue sur guitlab
+#Melissa MENGA
+
+
+unit-test-job:   # section test 
+  stage: test    # realisation des differents tests unitaires
+  script:
+    - apt-get update -qy
+    - apt-get install -y python3-dev python3-pip
+    - cd prototype_final
+    - pip install numpy
+    - python3 secheresse_gl.py -v
+    - python3 tempete_gl.py -v
+    - python3 soleil.py -v
+    - python3 pluie.py -v
+    - python3 Innondation.py -v
+    - python3 nuageux.py -v
+    - python3 Insolation.py -v
+    - python3 orage.py -v
+    - python3 ouragan.py -v
+    - python3 temperature.py -v
+    - python3 tornade.py -v
+    - python3 couvert.py -v

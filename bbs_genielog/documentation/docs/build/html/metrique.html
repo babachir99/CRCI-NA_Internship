@@ -1,0 +1,255 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Métriques &#8212; My meteo report 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Programmes Generate" href="generate.html" />
+    <link rel="prev" title="Phénomènes illustrés" href="meteo.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="generate.html" title="Programmes Generate"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="meteo.html" title="Phénomènes illustrés"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Métriques</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="metriques">
+<h1>Métriques<a class="headerlink" href="#metriques" title="Link to this heading">¶</a></h1>
+<p>En plus des phénomènes métérologiques, nous avons fourni des informations primordiales pour
+annoncer la météo: la température, la pression atmosphérique, l’insolation, une indication sur
+la hauteur des pluies, l’humidité de l’air ainsi que la vitesse du vent.</p>
+<section id="temperature">
+<h2>Température<a class="headerlink" href="#temperature" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;temperature&quot;</span><span class="p">):</span>
+        <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">temperature</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+            <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+                <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">temperature</span><span class="o">.</span><span class="n">temperature</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+        <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;temperature.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pour afficher la température, tout d’abord, une petite animation apparaît:
+un thermomètre. Ensuite, nous utilisons le fichier <em>temperature.txt</em> qui est simplement un texte, généré grâce à
+<em>generate_temperature</em>. Dans ce texte, l’ordinateur génère aléatoirement une température comprise entre -10 et 40°
+et la fait défiler à l’écran grâce à texte_afficher().</p>
+</section>
+<section id="pression-atmospherique">
+<h2>Pression Atmosphérique<a class="headerlink" href="#pression-atmospherique" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;PA&quot;</span><span class="p">):</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;PA.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>De même pour la pression atmosphérique, nous utilisons un fichier texte généré automatiquement, ou une valeur réaliste de
+pression atmosphérique y est générée aléatoirement. Cette valeur défile alors grâce à la fonction texte_afficher.</p>
+</section>
+<section id="insolation">
+<h2>Insolation<a class="headerlink" href="#insolation" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;insolation&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">Insolation</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">Insolation</span><span class="o">.</span><span class="n">insolation</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;insolation.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pour afficher l’insolation, tout d’abord, une petite animation apparaît:
+un soleil. Ensuite, nous utilisons le fichier <em>insolation.txt</em> qui est simplement un texte, généré automatiquement grâce à
+<em>generate_insolation</em>. On le fait défiler à l’écran grâce à la fonction définie dans text_defile.</p>
+</section>
+<section id="precipitation">
+<h2>Précipitation<a class="headerlink" href="#precipitation" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;precipitation&quot;</span><span class="p">):</span>
+        <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;precipitation.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pour la hauteur des pluies, nous utilisons un fichier texte généré automatiquement par generate_hauteur, ou une valeur réaliste de
+précipitation en mm est choisi aléatoirement. Cette valeur défile avec une catégorie qui permet de qualifier si les pluies ont été fortes ou non.</p>
+</section>
+<section id="vitesse-du-vent">
+<h2>Vitesse du Vent<a class="headerlink" href="#vitesse-du-vent" title="Link to this heading">¶</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;vitesse&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">vitesse</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">vitesse</span><span class="o">.</span><span class="n">vitesse</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                <span class="k">if</span> <span class="p">(</span><span class="n">j</span><span class="o">==</span><span class="mi">1</span><span class="p">):</span> <span class="c1">#permet d&#39;afficher la meteo</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;vitesse_vent.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>Pour afficher la vitesse du vent, une petite animation apparaît d’abord. Ensuite,
+nous utilisons le fichier <em>vitesse_vent.txt</em> qui est simplement un texte, généré automatiquement grâce à
+<em>generate_vv</em>. Dans ce texte, l’ordinateur génère aléatoirement une vitesse de vent. On la fait alors défiler
+à l’écran grâce à texte_afficher défini dans le fichier text_defile.</p>
+</section>
+<section id="humidite">
+<h2>Humidité<a class="headerlink" href="#humidite" title="Link to this heading">¶</a></h2>
+<blockquote>
+<div><div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;humidite&quot;</span><span class="p">):</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;humidite.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Pour l’humidité de l’air, nous utilisons un fichier texte généré automatiquement, <em>humidite.txt</em>,
+ou un pourcentage d’humidité relative s’affiche,
+avec un commentaire pour savoir si l’air est humide ou non.
+Tout cela défile grâce à la fonction texte_afficher() défini dans text_defile</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Métriques</a><ul>
+<li><a class="reference internal" href="#temperature">Température</a></li>
+<li><a class="reference internal" href="#pression-atmospherique">Pression Atmosphérique</a></li>
+<li><a class="reference internal" href="#insolation">Insolation</a></li>
+<li><a class="reference internal" href="#precipitation">Précipitation</a></li>
+<li><a class="reference internal" href="#vitesse-du-vent">Vitesse du Vent</a></li>
+<li><a class="reference internal" href="#humidite">Humidité</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="meteo.html"
+                          title="Previous page">&larr; Phénomènes illustrés</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="generate.html"
+                          title="Next page">&rarr; Programmes Generate</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/metrique.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="generate.html" title="Programmes Generate"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="meteo.html" title="Phénomènes illustrés"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Métriques</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Blue Business Services open source.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

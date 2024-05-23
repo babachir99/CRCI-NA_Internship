@@ -1,0 +1,31 @@
+Soleil
+===========
+
+Temps ensoleillé
+-----------------
+
+Le soleil a pointé le bout de son nez ? Grâce à la fonction soleil(), il est possible d'afficher dans la matrice 
+un soleil, bien jaune et brillant. 
+
+Voilà comment il se présente 
+
+.. code-block:: python
+
+            soleil = [[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,f,0,0,0,0,0,0,0,0],
+            [0,0,f,0,0,0,0,f,0,0,0,0,f,0,0,0],
+            [0,0,0,f,0,0,0,0,0,0,0,f,0,0,0,0],
+            [0,0,0,0,0,0,t,t,t,0,0,0,0,0,0,0],
+            [0,0,0,0,0,t,t,t,t,t,0,0,0,0,0,0],
+            [0,0,0,0,t,t,t,t,t,t,t,0,0,0,0,0],
+            [0,f,f,0,t,t,t,t,t,t,t,0,f,f,0,0],
+            [0,0,0,0,0,t,t,t,t,t,0,0,0,0,0,0],
+            [0,0,0,0,0,0,t,t,t,0,0,0,0,0,0,0],
+            [0,0,0,0,f,0,0,0,0,0,f,0,0,0,0,0],
+            [0,0,0,f,0,0,0,f,0,0,0,f,0,0,0,0],
+            [0,0,0,0,0,0,0,f,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]]
+
+Les lettres T et F sont définies dans un autre fichier, test_matrix. Elles permettent d'afficher le soleil aussi lumineux que nous le voyons!

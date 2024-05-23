@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fichier Main</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="_static/epub.css?v=1d6d279e" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="fichier-main">
+<h1>Fichier Main</h1>
+<p>Le fichier main est LE fichier qui nous intéresse. Il permet d’afficher toutes les fonctions précédemment créées. Voici coment il fonctionne</p>
+<p>En premier lieu, nous définissons une fonction Affiche°meteo qui prend comme argument meteo</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">Affiche_Meteo</span><span class="p">(</span><span class="n">meteo</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>Ensuite, cette fonction va aller chercher dans le fichier <em>data.txt</em>, créé grâce à <em>generate.py</em>, “meteo” qui a été généré aléatoirement grâce à <em>generate.py</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span><span class="s1">&#39;r&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">line</span><span class="o">=</span><span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">Affiche_Meteo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>On démarre alors une boucle, dont le résultat va varier selon la météo. Voici un exemple:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="n">meteo</span><span class="o">==</span><span class="s2">&quot;secheresse&quot;</span><span class="p">):</span>
+    <span class="n">nbMatrice</span> <span class="o">=</span> <span class="n">secheresse_gl</span><span class="o">.</span><span class="n">nbMatrice</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="c1">#l&#39;animation va tourner 5 fois</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">nbMatrice</span><span class="p">):</span>
+            <span class="n">test_matrix</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">secheresse_gl</span><span class="o">.</span><span class="n">tempete</span><span class="p">(</span><span class="n">j</span><span class="p">),</span><span class="mf">0.5</span><span class="p">)</span>
+            <span class="k">if</span> <span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">1</span><span class="p">):</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="secheresse align-center">
+<img alt="sortie si meteo=secheresse" src="_images/secheresse.png" style="width: 300px; height: 300px;" />
+</figure>
+<p><strong>Test unitaires</strong></p>
+<p>Nous allons utiliser des test grâce à doctest.
+Premièrement nous définissons ce que nous allons tester:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;&quot;&quot;</span>
+<span class="c1">#&gt;&gt;&gt; Affiche_Meteo(&quot;secheresse&quot;)</span>
+<span class="c1">#secheresse</span>
+<span class="c1">#&gt;&gt;&gt; Affiche_Meteo(&quot;tempete&quot;)</span>
+<span class="c1">#tempete</span>
+<span class="c1">#&gt;&gt;&gt; Affiche_Meteo(&quot;soleil&quot;)</span>
+<span class="c1">#soleil</span>
+<span class="c1">#&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Puis nous les exécutons:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1">#if __name__ == &quot;__main__&quot;:</span>
+<span class="c1">#import doctest</span>
+<span class="c1">#doctest.testmod()</span>
+</pre></div>
+</div>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:epub="http://www.idpf.org/2007/ops">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Programme Generate</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="_static/epub.css?v=1d6d279e" /> 
+  </head><body>
+
+    <div class="document">
+      <div class="documentwrapper">
+          <div class="body" role="main">
+            
+  <section id="programme-generate">
+<h1>Programme Generate</h1>
+<p>Ce programme permet la génération d’une liste de phénomènes métérologiques dans un fichier data.txt.
+L’execution du programme générera le nombre de phénomènes métérologiques par défaut, ici 3. Pour préciser
+le nombre d’émotions à générer vous pouvez utiliser un argument (entier) à passer au programme.</p>
+<p>Voici comment il fonctionne:</p>
+<p>On va tout d’abord générer le fichier data.txt.
+On spécifie que l’on veut 3 phénomènes métérologiques parmi une liste</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>On l’ouvre et on spécifie les arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">meteo</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tempete&quot;</span><span class="p">,</span> <span class="s2">&quot;secheresse&quot;</span><span class="p">,</span> <span class="s2">&quot;soleil&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>On génère ensuite le nombre spécifié de phénomènes (ici, 3). Ils seront alors noté dans le fichier data.txt</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">meteo</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Après avoir fermé le fichier, nous vérifions quand même si la saisie de l’utilisateur est correcte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+<span class="n">generate</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Et voilà ! le fichier data.txt est créé.</p>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,332 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Programmes Generate &#8212; My meteo report 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Défilement" href="textdefile.html" />
+    <link rel="prev" title="Métriques" href="metrique.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="textdefile.html" title="Défilement"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="metrique.html" title="Métriques"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Programmes Generate</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="programmes-generate">
+<h1>Programmes Generate<a class="headerlink" href="#programmes-generate" title="Link to this heading">¶</a></h1>
+<p>Ces programmes permettent de générer des fichiers txt. Grâce à la fonction affiche_text, décrite dans Défilement,
+on pourra alors faire défiler le texte dans la matrice.</p>
+<section id="fichier-generate-py">
+<h2>Fichier generate.py<a class="headerlink" href="#fichier-generate-py" title="Link to this heading">¶</a></h2>
+<p>Ce programme permet la génération d’une liste de phénomènes métérologiques dans un fichier data.txt.
+On choisit le nombre de phénomène à afficher dans les paramètres. Nous avons choisi 1, car ce fichier est
+utilisé pour afficher la météo en métropole dans le mode “fenêtre”. Pour préciser
+le nombre de phénomènes à générer vous pouvez utiliser un argument (entier) à passer au programme.</p>
+<p>Voici comment il fonctionne:</p>
+<p>On va tout d’abord générer le fichier data.txt.
+On spécifie que l’on veut 1 phénomène métérologique parmi une liste</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>On l’ouvre et on spécifie les arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;data.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+<span class="n">meteo</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tempete&quot;</span><span class="p">,</span> <span class="s2">&quot;secheresse&quot;</span><span class="p">,</span> <span class="s2">&quot;soleil&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>On génère ensuite le nombre spécifié de phénomènes (ici, 1). Ils seront alors noté dans le fichier data.txt</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">meteo</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)])</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Après avoir fermé le fichier, nous vérifions quand même si la saisie de l’utilisateur est correcte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+<span class="n">generate</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+<span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Et voilà ! le fichier data.txt est créé.</p>
+</section>
+<section id="fichier-gendanger">
+<h2>Fichier genDanger<a class="headerlink" href="#fichier-gendanger" title="Link to this heading">¶</a></h2>
+<p>Ce programme permet la génération d’une liste de phénomènes métérologiques parmi certains phénomènes,
+considérés dangereux dans un fichier generate_danger.txt.
+On choisit le nombre de phénomène à afficher dans les paramètres. Nous avons choisi 1, car ce fichier est
+utilisé pour afficher un phénomène dangereux, pour le mode danger. Pour préciser
+le nombre de phénomènes à générer vous pouvez utiliser un argument (entier) à passer au programme.</p>
+<p>On définit tout d’abord la fonction:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">number</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+</pre></div>
+</div>
+<p>On l’ouvre et on spécifie les arguments:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;generate_danger.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+    <span class="n">meteo</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;tempete&quot;</span><span class="p">,</span> <span class="s2">&quot;secheresse&quot;</span><span class="p">,</span> <span class="s2">&quot;innondation&quot;</span><span class="p">,]</span>
+</pre></div>
+</div>
+<p>On génère ensuite le nombre spécifié de phénomènes (ici, 1). Ils seront alors noté dans le fichier <em>generate_danger.txt</em></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">meteo</span><span class="p">[</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="nb">len</span><span class="p">(</span><span class="n">meteo</span><span class="p">)</span><span class="o">-</span><span class="mi">1</span><span class="p">)])</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Après avoir fermé le fichier, nous vérifions si la saisie de l’utilisateur est correcte:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">)</span><span class="o">&gt;</span><span class="mi">1</span><span class="p">:</span>
+    <span class="n">generate</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">sys</span><span class="o">.</span><span class="n">argv</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">generate</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="fichier-generate-insolation">
+<h2>Fichier generate_insolation<a class="headerlink" href="#fichier-generate-insolation" title="Link to this heading">¶</a></h2>
+<p>On créé un fichier ‘insolation.txt’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;insolation.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On génère un indice UV considéré comme élevé, entre 8 et 10, après avoir importé random.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Indice UV élevé: &quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">10</span><span class="p">)))</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;, risque d&#39;insolation&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Puis on ferme le fichier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="fichier-generate-pa">
+<h2>Fichier generate_pa<a class="headerlink" href="#fichier-generate-pa" title="Link to this heading">¶</a></h2>
+<p>Ce fichier sert à générer une pression atmosphérique au hasard grâce à la bibliothèque random.
+On créé un fichier ‘PA.txt’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;PA.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On génère une pression atmosphérique réaliste.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;La pression atmospherique est de  &quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1010</span><span class="p">,</span><span class="mi">1020</span><span class="p">)))</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;PA&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Puis on ferme le fichier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="fichier-generate-temperature">
+<h2>Fichier generate_temperature<a class="headerlink" href="#fichier-generate-temperature" title="Link to this heading">¶</a></h2>
+<p>Ce fichier sert à générer une température au hasard grâce à la bibliothèque random.
+On créé un fichier ‘temptxt.txt’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;temptxt.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On génère une température réaliste entre -10 et 40°</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;Il fait &quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">10</span><span class="p">,</span><span class="mi">40</span><span class="p">)))</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot; °C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Puis on ferme le fichier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="fichier-generate-vv">
+<h2>Fichier generate_vv<a class="headerlink" href="#fichier-generate-vv" title="Link to this heading">¶</a></h2>
+<p>Ce fichier sert à générer une vitesse de vent au hasard grâce à la bibliothèque random.
+On créé un fichier ‘vitesse_ven.txt’</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">=</span><span class="nb">open</span><span class="p">(</span><span class="s2">&quot;vitesse_vent.txt&quot;</span><span class="p">,</span><span class="s2">&quot;w&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On génère une vitesse de vent réaliste.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot;La vitesse du vent est de  &quot;</span><span class="p">)</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="mi">100</span><span class="p">)))</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s2">&quot; Km/h&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Puis on ferme le fichier.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="fichier-generate-hauteur-p">
+<h2>Fichier generate_hauteur_p<a class="headerlink" href="#fichier-generate-hauteur-p" title="Link to this heading">¶</a></h2>
+<p>Ce fichier permet de créer une hauteur de pluie, qu’on va ensuite classer dans une catégorie.
+Selon la hauteur des pluies générée, on aurant la catégorie: ‘très faible’, ‘faible’, ‘modéréée’,
+forte ou très forte, grâce a la fonction categorie_precipitation():</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">categorie_precipitation</span><span class="p">(</span><span class="n">hauteur</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">hauteur</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Très faible&quot;</span>
+    <span class="k">elif</span> <span class="mi">2</span> <span class="o">&lt;=</span> <span class="n">hauteur</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Faible&quot;</span>
+    <span class="k">elif</span> <span class="mi">10</span> <span class="o">&lt;=</span> <span class="n">hauteur</span> <span class="o">&lt;</span> <span class="mi">25</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Modérée&quot;</span>
+    <span class="k">elif</span> <span class="mi">25</span> <span class="o">&lt;=</span> <span class="n">hauteur</span> <span class="o">&lt;</span> <span class="mi">50</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Forte&quot;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;Très forte&quot;</span>
+
+    <span class="n">hauteur_precipitation</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+    <span class="n">categorie</span> <span class="o">=</span> <span class="n">categorie_precipitation</span><span class="p">(</span><span class="n">hauteur_precipitation</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On écrit le texte généré dans un nouveau fichier:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;precipitation.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;w&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+<span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;La hauteur des pluies est de </span><span class="si">{</span><span class="n">hauteur_precipitation</span><span class="si">}</span><span class="s2"> mm, catégorie: </span><span class="si">{</span><span class="n">categorie</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Programmes Generate</a><ul>
+<li><a class="reference internal" href="#fichier-generate-py">Fichier generate.py</a></li>
+<li><a class="reference internal" href="#fichier-gendanger">Fichier genDanger</a></li>
+<li><a class="reference internal" href="#fichier-generate-insolation">Fichier generate_insolation</a></li>
+<li><a class="reference internal" href="#fichier-generate-pa">Fichier generate_pa</a></li>
+<li><a class="reference internal" href="#fichier-generate-temperature">Fichier generate_temperature</a></li>
+<li><a class="reference internal" href="#fichier-generate-vv">Fichier generate_vv</a></li>
+<li><a class="reference internal" href="#fichier-generate-hauteur-p">Fichier generate_hauteur_p</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="metrique.html"
+                          title="Previous page">&larr; Métriques</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="textdefile.html"
+                          title="Next page">&rarr; Défilement</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/generate.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="textdefile.html" title="Défilement"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="metrique.html" title="Métriques"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Programmes Generate</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Blue Business Services open source.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>

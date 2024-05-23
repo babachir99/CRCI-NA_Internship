@@ -1,0 +1,219 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Fichier Main &#8212; My meteo report 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="_static/cloud.css?v=f9ae72be" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noticia+Text:400,i,b,bi|Open+Sans:400,i,b,bi|Roboto+Mono:400,i,b,bi&amp;display=swap" type="text/css" />
+    
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=888ff710"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+
+    
+    
+     
+        <script src="_static/jquery.cookie.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.base.js"></script>
+    
+
+    
+     
+        <script src="_static/cloud.js"></script>
+    
+
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Phénomènes métérologiques" href="phenomene.html" />
+    <link rel="prev" title="Affichage" href="test_matrix.html" /> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head><body>
+    <div class="relbar-top">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="phenomene.html" title="Phénomènes métérologiques"
+             accesskey="N">next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="test_matrix.html" title="Affichage"
+             accesskey="P">previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Fichier Main</a></li> 
+      </ul>
+    </div>
+    </div>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="fichier-main">
+<h1>Fichier Main<a class="headerlink" href="#fichier-main" title="Link to this heading">¶</a></h1>
+<p>Le fichier main est LE fichier qui nous intéresse. Il permet d’afficher toutes les fonctions précédemment créées, tout en y important une fonctionnalité importante: un <strong>mode</strong>.
+En effet,  3 modes sont disponibles.</p>
+<p>Nous avons ainsi fait un menu interactif grâce à une boucle <em>while</em>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">while</span> <span class="n">mode</span><span class="o">!=</span><span class="s2">&quot;0&quot;</span><span class="p">:</span>
+<span class="n">mode</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Choisissez le mode: éducatif (1), fenêtre (2), alerte (3) (Quitter: 0): &quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>On demande alors à l’utilisateur de sélectionner un mode. Pour faciliter la saisie et éviter toute erreur, nous avons faiclité l’entrée utilisateur avec des chiffres plutôt que des chaînes de caractères.</p>
+<section id="mode-educatif">
+<h2>Mode éducatif<a class="headerlink" href="#mode-educatif" title="Link to this heading">¶</a></h2>
+<p>Dans le mode éducatif, l’utilisateur peut saisir la météo qu’il veux afficher, parmis un choix de 10 phénomènes métérologiques et 6 métriques</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
+    <span class="n">choix_meteo</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez choisir un phénomène météorologique entre: temperature, PA (pression), insolation, vitesse (du vent), humidite (de l&#39;air), precipitations(hauteur des pluies), soleil, pluie, couvert, orage, nuageux, innondation, tornade, ouragan, sécheresse, tempête: &quot;</span><span class="p">)</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;modeeducatif.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">meteo</span><span class="o">.</span><span class="n">Affiche_Meteo</span><span class="p">(</span><span class="n">choix_meteo</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Si l’utilisateur tape ‘1’, le mode éducatif s’affiche. Pour prévenir l’utiliateur, un message défile d’abord: “<em>Mode: éducatif</em>”. L’utilisateur peut ensuite choisir le phénomène qu’il souhaite voir s’afficher.</p>
+</section>
+<section id="mode-alerte">
+<h2>Mode alerte<a class="headerlink" href="#mode-alerte" title="Link to this heading">¶</a></h2>
+<p>Lorsque le mode alerte est choisi, un message d’alerte défile alors sur la matrice. Puis un phénomène est ensuite affiché sur l’écran.
+Ce phénomène est généré par hasard grâce à genDanger.py, qui génère un ficher generete_danger.txt. Dans ce fichier un phénomène métérologique choisi au hasard par l’ordinateur y est inscrit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="n">mode</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s2">&quot;alerte&quot;</span><span class="p">:</span>
+    <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;danger.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+    <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;generate_danger.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+        <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="n">meteo</span><span class="o">.</span><span class="n">Affiche_Meteo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+        <span class="n">file</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+<section id="mode-fenetre">
+<h2>Mode fenêtre<a class="headerlink" href="#mode-fenetre" title="Link to this heading">¶</a></h2>
+<p>Si l’utilisateur entre ‘2’, le mode fenêtre s’affiche alors. Ce mode permet à l’utilisateur de consulter la météo en métropole.
+Lors du choix de ce mode, un message s’affiche pour notifier l’utilisateur du mode choisi: “<em>Mode: Fenêtre</em>”. Le texte à afficher provient du document <em>modefenetre.txt</em>
+Le phénomène affiché pour indiquer la météo en métropole est définit de manière aléatoire grâce à generate.py, qui
+crée un fichier data.txt avec un phénomène inscrit.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">elif</span> <span class="n">mode</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
+   <span class="n">text_defile</span><span class="o">.</span><span class="n">texte_afficher</span><span class="p">(</span><span class="s1">&#39;modefenetre.txt&#39;</span><span class="p">,</span> <span class="p">(</span><span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
+   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;En métropole, voici la météo: &quot;</span><span class="p">)</span>
+   <span class="n">file</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;data.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;r&#39;</span><span class="p">)</span>
+   <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
+       <span class="n">line</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="n">rstrip</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+       <span class="n">meteo</span><span class="o">.</span><span class="n">Affiche_Meteo</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="quitter">
+<h2>Quitter<a class="headerlink" href="#quitter" title="Link to this heading">¶</a></h2>
+<p>Pour quitter le menu, il suffit simplement à l’utilisateur de rentrer “0”, ce qui met fin à la boucle.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="sphinx-toc sphinxlocaltoc">
+    <h3><a href="index.html">Page contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Fichier Main</a><ul>
+<li><a class="reference internal" href="#mode-educatif">Mode éducatif</a></li>
+<li><a class="reference internal" href="#mode-alerte">Mode alerte</a></li>
+<li><a class="reference internal" href="#mode-fenetre">Mode fenêtre</a></li>
+<li><a class="reference internal" href="#quitter">Quitter</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div class="sphinxprev">
+    <h4>Previous page</h4>
+    <p class="topless"><a href="test_matrix.html"
+                          title="Previous page">&larr; Affichage</a></p>
+  </div>
+  <div class="sphinxnext">
+    <h4>Next page</h4>
+    <p class="topless"><a href="phenomene.html"
+                          title="Next page">&rarr; Phénomènes métérologiques</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/main.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>document.getElementById('searchbox').style.display = "block"</script>
+        </div>
+      </div>
+    
+    
+        <div class="sidebar-toggle-group no-js">
+            
+            <button class="sidebar-toggle" id="sidebar-hide" title="Hide the sidebar menu">
+                 «
+                <span class="show-for-small">hide menu</span>
+                
+            </button>
+            <button class="sidebar-toggle" id="sidebar-show" title="Show the sidebar menu">
+                
+                <span class="show-for-small">menu</span>
+                <span class="hide-for-small">sidebar</span>
+                 »
+            </button>
+        </div>
+    
+      <div class="clearer"></div>
+    </div>
+    <div class="relbar-bottom">
+        
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="phenomene.html" title="Phénomènes métérologiques"
+             >next</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="test_matrix.html" title="Affichage"
+             >previous</a> &nbsp; &nbsp;</li>
+    <li><a href="index.html">My meteo report 1.0 documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Fichier Main</a></li> 
+      </ul>
+    </div>
+    </div>
+
+    <div class="footer" role="contentinfo">
+    &#169; Copyright 2023, Blue Business Services open source.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    </div>
+    <!-- cloud_sptheme 1.4 -->
+  </body>
+</html>
